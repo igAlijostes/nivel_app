@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
 
             ALTO=metricts.heightPixels;
             int centroY= ALTO/2;
-            topeY=ALTO-bolita.getWidth()/2;
+            topeY=ALTO-bolita.getHeight()/2;
 
             ANCHO=metricts.widthPixels;
             int centroX= ANCHO/2;
@@ -92,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public void onSensorChanged(SensorEvent event) {
-        posicion.x=event.values[1];
+        posicion.x +=event.values[1];
 
         if(posicion.x < 0) {
             posicion.x=0;
@@ -100,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
           posicion.x=topeX;
         }
 
-            posicion.x=event.values[0];
+            posicion.x +=event.values[0];
 
         if(posicion.y < 0) {
                 posicion.y=0;
